@@ -278,12 +278,12 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Focus Plan */}
-            <Card className="relative border-2 hover:border-primary/50 transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl text-foreground">Focus</CardTitle>
-                <CardDescription>For solopreneurs & first-time VA users</CardDescription>
-                <div className="text-3xl font-bold text-foreground">
-                  R1,850<span className="text-lg text-muted-foreground font-normal">/month</span>
+            <Card className="relative border-2 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 bg-gradient-to-br from-white to-muted/20">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl text-foreground mb-2">Focus</CardTitle>
+                <CardDescription className="text-lg mb-4">For solopreneurs & first-time VA users</CardDescription>
+                <div className="text-4xl font-bold text-foreground">
+                  R1,850<span className="text-xl text-muted-foreground font-normal">/month</span>
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -314,12 +314,12 @@ export default function Index() {
             </Card>
 
             {/* Momentum Plan */}
-            <Card className="relative border-2 hover:border-secondary/50 transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl text-foreground">Momentum</CardTitle>
-                <CardDescription>For growing businesses</CardDescription>
-                <div className="text-3xl font-bold text-foreground">
-                  R3,700<span className="text-lg text-muted-foreground font-normal">/month</span>
+            <Card className="relative border-2 hover:border-secondary/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 bg-gradient-to-br from-white to-muted/20">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl text-foreground mb-2">Momentum</CardTitle>
+                <CardDescription className="text-lg mb-4">For growing businesses</CardDescription>
+                <div className="text-4xl font-bold text-foreground">
+                  R3,700<span className="text-xl text-muted-foreground font-normal">/month</span>
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -349,15 +349,15 @@ export default function Index() {
             </Card>
 
             {/* Synegy Plan */}
-            <Card className="relative border-2 border-primary bg-primary/5 hover:border-primary transition-all duration-300">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-primary text-primary-foreground">Most Popular</Badge>
+            <Card className="relative border-2 border-primary bg-gradient-to-br from-primary/10 to-primary/5 hover:border-primary transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 scale-105">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <Badge className="bg-primary text-primary-foreground px-4 py-2 text-sm font-bold shadow-lg">Most Popular</Badge>
               </div>
-              <CardHeader>
-                <CardTitle className="text-xl text-foreground">Synegy</CardTitle>
-                <CardDescription>For busy professionals & teams</CardDescription>
-                <div className="text-3xl font-bold text-foreground">
-                  R7,400<span className="text-lg text-muted-foreground font-normal">/month</span>
+              <CardHeader className="pb-6 pt-8">
+                <CardTitle className="text-2xl text-foreground mb-2">Synegy</CardTitle>
+                <CardDescription className="text-lg mb-4">For busy professionals & teams</CardDescription>
+                <div className="text-4xl font-bold text-foreground">
+                  R7,400<span className="text-xl text-muted-foreground font-normal">/month</span>
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -387,12 +387,12 @@ export default function Index() {
             </Card>
 
             {/* Executive Partner Plan */}
-            <Card className="relative border-2 hover:border-accent/50 transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl text-foreground">Executive Partner</CardTitle>
-                <CardDescription>For established businesses</CardDescription>
-                <div className="text-3xl font-bold text-foreground">
-                  R12,000<span className="text-lg text-muted-foreground font-normal">+/month</span>
+            <Card className="relative border-2 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 bg-gradient-to-br from-white to-muted/20">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl text-foreground mb-2">Executive Partner</CardTitle>
+                <CardDescription className="text-lg mb-4">For established businesses</CardDescription>
+                <div className="text-4xl font-bold text-foreground">
+                  R12,000<span className="text-xl text-muted-foreground font-normal">+/month</span>
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -431,13 +431,17 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-primary/10 to-accent/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Let's build something amazing together. Contact us today to discuss your project and discover 
+      <section id="contact" className="py-24 bg-gradient-to-br from-primary/15 via-secondary/10 to-primary/15 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-primary/5 to-transparent"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <div className="inline-block mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 relative">
+              Ready to Transform Your Business?
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+            </h2>
+          </div>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+            Let's build something amazing together. Contact us today to discuss your project and discover
             how we can help you achieve your business goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
