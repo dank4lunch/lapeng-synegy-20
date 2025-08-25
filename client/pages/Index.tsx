@@ -177,48 +177,56 @@ export default function Index() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20">
+      <section id="about" className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Meet Our Directors
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-20">
+            <div className="inline-block">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 relative">
+                Meet Our Directors
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              </h2>
+            </div>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-8">
               Industry experts who combine strategic thinking with innovative vision
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="text-center p-8">
-              <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white font-bold text-2xl">TM</span>
+            <Card className="text-center p-10 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/20">
+              <div className="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-8 flex items-center justify-center shadow-xl">
+                <span className="text-white font-bold text-3xl">TM</span>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">Thabang Makhema</h3>
-              <p className="text-primary font-semibold mb-4">Co-Founder & Director</p>
-              <p className="text-muted-foreground leading-relaxed">
-                Expert in management, marketing, and emerging technologies. With formal qualifications in 
-                Management Marketing, AI Foundations, and Sunbird Ed, Thabang combines strategic thinking 
+              <h3 className="text-3xl font-bold text-foreground mb-3">Thabang Makhema</h3>
+              <p className="text-primary font-bold mb-6 text-xl">Co-Founder & Director</p>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Expert in management, marketing, and emerging technologies. With formal qualifications in
+                Management Marketing, AI Foundations, and Sunbird Ed, Thabang combines strategic thinking
                 with an innovative mindset to deliver impactful solutions.
               </p>
             </Card>
 
-            <Card className="text-center p-8">
-              <div className="w-24 h-24 bg-gradient-to-br from-secondary to-accent rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-white font-bold text-2xl">TS</span>
+            <Card className="text-center p-10 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/20">
+              <div className="w-32 h-32 bg-gradient-to-br from-secondary to-primary rounded-full mx-auto mb-8 flex items-center justify-center shadow-xl">
+                <span className="text-white font-bold text-3xl">TS</span>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">Tshiamo Sookane</h3>
-              <p className="text-secondary font-semibold mb-4">Co-Founder & Director</p>
-              <p className="text-muted-foreground leading-relaxed">
-                Brand Development, Marketing, and Media Specialist with strong experience in crafting 
-                compelling brand stories and campaigns. Tshiamo has a sharp eye for creativity and strategy, 
+              <h3 className="text-3xl font-bold text-foreground mb-3">Tshiamo Sookane</h3>
+              <p className="text-secondary font-bold mb-6 text-xl">Co-Founder & Director</p>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Brand Development, Marketing, and Media Specialist with strong experience in crafting
+                compelling brand stories and campaigns. Tshiamo has a sharp eye for creativity and strategy,
                 ensuring brands stand out and resonate with their audiences.
               </p>
             </Card>
           </div>
 
           {/* Company Values */}
-          <div className="mt-16 bg-muted/30 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-foreground text-center mb-8">Our Core Values</h3>
+          <div className="mt-20 bg-gradient-to-br from-muted/40 to-muted/20 rounded-3xl p-12 shadow-xl">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 relative inline-block">
+                Our Core Values
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              </h3>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -254,13 +262,16 @@ export default function Index() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-muted/30">
+      <section id="pricing" className="py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Virtual Assistant Subscription Plans
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-20">
+            <div className="inline-block">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 relative">
+                Virtual Assistant Plans
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              </h2>
+            </div>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-8">
               Professional support tailored to your business needs with flexible subscription options
             </p>
           </div>
