@@ -62,10 +62,10 @@ export default {
           foreground: "hsl(var(--success-foreground))",
         },
         brand: {
-          blue: "#3B82F6",
-          orange: "#F97316",
-          purple: "#8B5CF6",
-          teal: "#0D9488",
+          navy: "#1e3a8a",
+          green: "#059669",
+          lightBlue: "#3b82f6",
+          darkBlue: "#1e293b",
         },
       },
       borderRadius: {
