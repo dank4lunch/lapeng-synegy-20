@@ -7,6 +7,18 @@ export default function Header() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false); // Close mobile menu after clicking
+  };
+
+  const handleGetStarted = () => {
+    scrollToSection('contact');
+  };
+
   return (
     <header className="bg-white/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,19 +36,34 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => scrollToSection('services')}
+              className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            >
               Services
-            </a>
-            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+            </button>
+            <button
+              onClick={() => scrollToSection('about')}
+              className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            >
               About
-            </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">
+            </button>
+            <button
+              onClick={() => scrollToSection('pricing')}
+              className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            >
               Pricing
-            </a>
-            <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            >
               Contact
-            </a>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            </button>
+            <Button
+              onClick={handleGetStarted}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300"
+            >
               Get Started
             </Button>
           </nav>
@@ -53,36 +80,35 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-border">
-              <a
-                href="#services"
-                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
-                onClick={toggleMenu}
+              <button
+                onClick={() => scrollToSection('services')}
+                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors w-full text-left"
               >
                 Services
-              </a>
-              <a
-                href="#about"
-                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
-                onClick={toggleMenu}
+              </button>
+              <button
+                onClick={() => scrollToSection('about')}
+                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors w-full text-left"
               >
                 About
-              </a>
-              <a
-                href="#pricing"
-                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
-                onClick={toggleMenu}
+              </button>
+              <button
+                onClick={() => scrollToSection('pricing')}
+                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors w-full text-left"
               >
                 Pricing
-              </a>
-              <a
-                href="#contact"
-                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors"
-                onClick={toggleMenu}
+              </button>
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors w-full text-left"
               >
                 Contact
-              </a>
+              </button>
               <div className="px-3 py-2">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button
+                  onClick={handleGetStarted}
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300"
+                >
                   Get Started
                 </Button>
               </div>
