@@ -1,24 +1,31 @@
-import { CheckCircle, ArrowRight, Users, Zap, Target, Shield, Smartphone, Globe, Brain, TrendingUp, Star, Quote } from "lucide-react";
+import { ArrowRight, Play, Star, Users, Zap, Target, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Index() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/contact');
+  };
+
+  const handleViewServices = () => {
+    navigate('/services');
+  };
+
+  const handleViewPricing = () => {
+    navigate('/pricing');
+  };
+
+  const scrollToStats = () => {
+    const element = document.getElementById('stats');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const handleGetStarted = () => {
-    scrollToSection('contact');
-  };
-
-  const handleViewWork = () => {
-    scrollToSection('services');
   };
 
   return (
@@ -26,440 +33,238 @@ export default function Index() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-40 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/10 to-primary/5"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-primary/5 to-transparent"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center max-w-5xl mx-auto">
-            <Badge className="mb-8 bg-primary/10 text-primary border-primary/20 px-6 py-3 text-lg font-medium">
-              Media • Marketing • Technology
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-primary/10 to-transparent"></div>
+        
+        {/* Animated background elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-accent/10 rounded-full blur-xl animate-pulse delay-500"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-6xl mx-auto">
+            <Badge className="mb-8 bg-primary/10 text-primary border-primary/20 px-8 py-4 text-xl font-medium animate-fade-in">
+              🚀 Media • Marketing • Technology
             </Badge>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-8 leading-tight">
+            
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-foreground mb-8 leading-tight">
               Bridge the gap between
-              <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent"> creativity </span>
-              and
-              <span className="bg-gradient-to-r from-secondary via-primary to-secondary bg-clip-text text-transparent"> technology</span>
+              <span className="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient">
+                creativity
+              </span>
+              <span className="text-4xl md:text-6xl lg:text-7xl">and</span>
+              <span className="block bg-gradient-to-r from-secondary via-primary to-secondary bg-clip-text text-transparent animate-gradient">
+                technology
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-              Lapeng Synegy empowers businesses through integrated marketing strategies,
-              engaging media content, and smart tech innovations that deliver measurable results.
+            
+            <p className="text-2xl md:text-3xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+              Transform your business with <span className="text-primary font-semibold">integrated marketing strategies</span>, 
+              <span className="text-secondary font-semibold"> cutting-edge technology</span>, and 
+              <span className="text-accent font-semibold"> measurable results</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+              <Button 
+                size="lg" 
                 onClick={handleGetStarted}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105"
               >
-                Get Started Today
-                <ArrowRight className="ml-2 h-5 w-5" />
+                Start Your Transformation
+                <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={handleViewWork}
-                className="px-8 py-4 text-lg border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                onClick={handleViewServices}
+                className="px-12 py-6 text-xl border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105"
               >
-                View Our Work
+                <Play className="mr-3 h-6 w-6" />
+                Explore Our Services
               </Button>
             </div>
+
+            {/* Scroll indicator */}
+            <button 
+              onClick={scrollToStats}
+              className="mx-auto block text-muted-foreground hover:text-primary transition-colors duration-300 animate-bounce"
+            >
+              <ChevronDown className="h-8 w-8" />
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-24 bg-muted/20">
+      {/* Stats Section */}
+      <section id="stats" className="py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <div className="inline-block">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 relative">
-                Our Core Services
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-              </h2>
-            </div>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-8">
-              We blend creative media strategies with smart technology to ensure you stand out and achieve measurable growth.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-primary/5">
+              <CardContent className="pt-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Target className="h-10 w-10 text-primary" />
+                </div>
+                <h3 className="text-4xl font-bold text-foreground mb-3">100%</h3>
+                <p className="text-xl text-muted-foreground">Measurable Results</p>
+                <p className="text-sm text-muted-foreground mt-2">Data-driven strategies that deliver clear ROI</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-secondary/5">
+              <CardContent className="pt-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Zap className="h-10 w-10 text-secondary" />
+                </div>
+                <h3 className="text-4xl font-bold text-foreground mb-3">24/7</h3>
+                <p className="text-xl text-muted-foreground">Innovation First</p>
+                <p className="text-sm text-muted-foreground mt-2">Cutting-edge solutions that keep you ahead</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-accent/5">
+              <CardContent className="pt-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <Users className="h-10 w-10 text-accent" />
+                </div>
+                <h3 className="text-4xl font-bold text-foreground mb-3">50+</h3>
+                <p className="text-xl text-muted-foreground">Trusted Partners</p>
+                <p className="text-sm text-muted-foreground mt-2">Long-term relationships built on excellence</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Preview */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              What We Do Best
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              We combine creative excellence with technological innovation to deliver solutions that drive real business growth
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {/* Media & Marketing */}
-            <Card className="border-2 hover:border-secondary/50 transition-all duration-500 group hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
-              <CardHeader className="pb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-xl flex items-center justify-center mb-6 group-hover:from-secondary/30 group-hover:to-secondary/20 transition-all duration-300 group-hover:scale-110">
-                  <TrendingUp className="h-8 w-8 text-secondary" />
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <div className="group">
+              <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-3xl p-8 h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-bold text-2xl">M</span>
                 </div>
-                <CardTitle className="text-3xl text-foreground mb-3">Media & Marketing Solutions</CardTitle>
-                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
-                  Strategic marketing that builds brands and drives engagement
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-start space-x-4 py-2">
-                <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground text-lg">Social Media Management & Marketing</span>
-              </li>
-                  <li className="flex items-start space-x-4 py-2">
-                <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground text-lg">Brand Development & Positioning</span>
-              </li>
-                  <li className="flex items-start space-x-4 py-2">
-                <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground text-lg">Creative Content Production</span>
-              </li>
-                  <li className="flex items-start space-x-4 py-2">
-                <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground text-lg">Marketing Strategy & Campaign Execution</span>
-              </li>
+                <h3 className="text-3xl font-bold text-foreground mb-4">Media & Marketing</h3>
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  Strategic marketing campaigns, brand development, and creative content that builds authentic connections with your audience.
+                </p>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>✓ Social Media Management</li>
+                  <li>✓ Brand Development</li>
+                  <li>✓ Content Creation</li>
+                  <li>✓ Campaign Strategy</li>
                 </ul>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            {/* Technology Solutions */}
-            <Card className="border-2 hover:border-primary/50 transition-all duration-500 group hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
-              <CardHeader className="pb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 group-hover:scale-110">
-                  <Brain className="h-8 w-8 text-primary" />
+            <div className="group">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8 h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-bold text-2xl">T</span>
                 </div>
-                <CardTitle className="text-3xl text-foreground mb-3">Technology Solutions</CardTitle>
-                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
-                  Innovative tech solutions that drive digital transformation
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-start space-x-4 py-2">
-                    <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground text-lg">Web & Mobile Application Development</span>
-                  </li>
-                  <li className="flex items-start space-x-4 py-2">
-                    <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground text-lg">AI-driven Solutions & Automations</span>
-                  </li>
-                  <li className="flex items-start space-x-4 py-2">
-                    <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground text-lg">IT Support & Consulting</span>
-                  </li>
-                  <li className="flex items-start space-x-4 py-2">
-                    <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground text-lg">Digital Transformation Strategies</span>
-                  </li>
+                <h3 className="text-3xl font-bold text-foreground mb-4">Technology Solutions</h3>
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  Innovative tech solutions, AI automation, and digital transformation strategies that streamline your operations.
+                </p>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>✓ Web & Mobile Development</li>
+                  <li>✓ AI Solutions & Automation</li>
+                  <li>✓ Digital Transformation</li>
+                  <li>✓ IT Support & Consulting</li>
                 </ul>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
 
-          {/* Value Props */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="text-center group hover:-translate-y-2 transition-all duration-300">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-primary/30 group-hover:to-primary/20 group-hover:scale-110 transition-all duration-300">
-                <Target className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Measurable Results</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">Data-driven strategies that deliver clear ROI and business growth</p>
-            </div>
-            <div className="text-center group hover:-translate-y-2 transition-all duration-300">
-              <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-secondary/30 group-hover:to-secondary/20 group-hover:scale-110 transition-all duration-300">
-                <Zap className="h-10 w-10 text-secondary" />
-              </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Innovation First</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">Cutting-edge solutions that keep you ahead of the competition</p>
-            </div>
-            <div className="text-center group hover:-translate-y-2 transition-all duration-300">
-              <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-accent/30 group-hover:to-accent/20 group-hover:scale-110 transition-all duration-300">
-                <Shield className="h-10 w-10 text-accent" />
-              </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Trusted Partnership</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">Long-term relationships built on excellence and integrity</p>
-            </div>
+          <div className="text-center">
+            <Button 
+              size="lg" 
+              onClick={handleViewServices}
+              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-12 py-6 text-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
+            >
+              Explore All Services
+              <ArrowRight className="ml-3 h-6 w-6" />
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24">
+      {/* Testimonials */}
+      <section className="py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <div className="inline-block">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 relative">
-                Meet Our Directors
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-              </h2>
-            </div>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-8">
-              Industry experts who combine strategic thinking with innovative vision
-            </p>
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              Client Success Stories
+            </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="text-center p-10 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/20">
-              <div className="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-8 flex items-center justify-center shadow-xl">
-                <span className="text-white font-bold text-3xl">TM</span>
-              </div>
-              <h3 className="text-3xl font-bold text-foreground mb-3">Thabang Makhema</h3>
-              <p className="text-primary font-bold mb-6 text-xl">Co-Founder & Director</p>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                Expert in management, marketing, and emerging technologies. With formal qualifications in
-                Management Marketing, AI Foundations, and Sunbird Ed, Thabang combines strategic thinking
-                with an innovative mindset to deliver impactful solutions.
-              </p>
-            </Card>
-
-            <Card className="text-center p-10 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/20">
-              <div className="w-32 h-32 bg-gradient-to-br from-secondary to-primary rounded-full mx-auto mb-8 flex items-center justify-center shadow-xl">
-                <span className="text-white font-bold text-3xl">TS</span>
-              </div>
-              <h3 className="text-3xl font-bold text-foreground mb-3">Tshiamo Sookane</h3>
-              <p className="text-secondary font-bold mb-6 text-xl">Co-Founder & Director</p>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                Brand Development, Marketing, and Media Specialist with strong experience in crafting
-                compelling brand stories and campaigns. Tshiamo has a sharp eye for creativity and strategy,
-                ensuring brands stand out and resonate with their audiences.
-              </p>
-            </Card>
-          </div>
-
-          {/* Company Values */}
-          <div className="mt-20 bg-gradient-to-br from-muted/40 to-muted/20 rounded-3xl p-12 shadow-xl">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 relative inline-block">
-                Our Core Values
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Zap className="h-6 w-6 text-primary" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">Innovation</h4>
-                <p className="text-sm text-muted-foreground">Embracing creativity and technology</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Star className="h-6 w-6 text-accent" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">Excellence</h4>
-                <p className="text-sm text-muted-foreground">Delivering high-quality solutions</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Users className="h-6 w-6 text-secondary" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">Collaboration</h4>
-                <p className="text-sm text-muted-foreground">Building strong partnerships</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Shield className="h-6 w-6 text-green-600" />
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">Integrity</h4>
-                <p className="text-sm text-muted-foreground">Upholding honesty and professionalism</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="py-24 bg-muted/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <div className="inline-block">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 relative">
-                Virtual Assistant Plans
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-              </h2>
-            </div>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-8">
-              Professional support tailored to your business needs with flexible subscription options
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Focus Plan */}
-            <Card className="relative border-2 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 bg-gradient-to-br from-white to-muted/20">
-              <CardHeader className="pb-6">
-                <CardTitle className="text-2xl text-foreground mb-2">Focus</CardTitle>
-                <CardDescription className="text-lg mb-4">For solopreneurs & first-time VA users</CardDescription>
-                <div className="text-4xl font-bold text-foreground">
-                  R1,850<span className="text-xl text-muted-foreground font-normal">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">10 hours/month VA support</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">Inbox & calendar management</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">Basic data entry & research</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">1x weekly progress update</span>
-                </div>
-                <Button
-                  className="w-full mt-6 hover:bg-primary hover:text-white transition-all duration-300"
-                  variant="outline"
-                  onClick={() => window.open('mailto:info@lapengsynegy.com?subject=Focus Plan Inquiry', '_blank')}
-                >
-                  Choose Focus
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Momentum Plan */}
-            <Card className="relative border-2 hover:border-secondary/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 bg-gradient-to-br from-white to-muted/20">
-              <CardHeader className="pb-6">
-                <CardTitle className="text-2xl text-foreground mb-2">Momentum</CardTitle>
-                <CardDescription className="text-lg mb-4">For growing businesses</CardDescription>
-                <div className="text-4xl font-bold text-foreground">
-                  R3,700<span className="text-xl text-muted-foreground font-normal">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">20 hours/month VA support</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">Everything in Focus +</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">Social media scheduling</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">Priority response (24h)</span>
-                </div>
-                <Button
-                  className="w-full mt-6 bg-secondary hover:bg-secondary/90 transition-all duration-300 shadow-md hover:shadow-lg"
-                  onClick={() => window.open('mailto:info@lapengsynegy.com?subject=Momentum Plan Inquiry', '_blank')}
-                >
-                  Choose Momentum
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Synegy Plan */}
-            <Card className="relative border-2 border-primary bg-gradient-to-br from-primary/10 to-primary/5 hover:border-primary transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 scale-105">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-primary text-primary-foreground px-4 py-2 text-sm font-bold shadow-lg">Most Popular</Badge>
-              </div>
-              <CardHeader className="pb-6 pt-8">
-                <CardTitle className="text-2xl text-foreground mb-2">Synegy</CardTitle>
-                <CardDescription className="text-lg mb-4">For busy professionals & teams</CardDescription>
-                <div className="text-4xl font-bold text-foreground">
-                  R7,400<span className="text-xl text-muted-foreground font-normal">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">40 hours/month VA support</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">Everything in Momentum +</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">Meeting notes & reports</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">End-of-month analytics</span>
-                </div>
-                <Button
-                  className="w-full mt-6 bg-primary hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg"
-                  onClick={() => window.open('mailto:info@lapengsynegy.com?subject=Synegy Plan Inquiry', '_blank')}
-                >
-                  Choose Synegy
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Executive Partner Plan */}
-            <Card className="relative border-2 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 bg-gradient-to-br from-white to-muted/20">
-              <CardHeader className="pb-6">
-                <CardTitle className="text-2xl text-foreground mb-2">Executive Partner</CardTitle>
-                <CardDescription className="text-lg mb-4">For established businesses</CardDescription>
-                <div className="text-4xl font-bold text-foreground">
-                  R12,000<span className="text-xl text-muted-foreground font-normal">+/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">60+ hours/month (custom)</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">Dedicated VA</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">Full workflow integration</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="h-4 w-4 text-success" />
-                  <span className="text-sm text-muted-foreground">Bi-weekly strategy check-ins</span>
-                </div>
-                <Button
-                  className="w-full mt-6 bg-accent hover:bg-accent/90 transition-all duration-300 shadow-md hover:shadow-lg"
-                  onClick={() => window.open('mailto:info@lapengsynegy.com?subject=Executive Partner Plan Inquiry', '_blank')}
-                >
-                  Contact Sales
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">
-              Flexible subscription • Cancel or upgrade anytime • Secure & professional task handling
-            </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[1, 2, 3].map((i) => (
+              <Card key={i} className="p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
+                <CardContent className="pt-6">
+                  <div className="flex mb-4">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="h-5 w-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-lg text-muted-foreground mb-6 italic">
+                    "Lapeng Synegy transformed our digital presence completely. Their integrated approach to marketing and technology delivered results beyond our expectations."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-4">
+                      <span className="text-white font-bold">C{i}</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">Client {i}</p>
+                      <p className="text-sm text-muted-foreground">CEO, Company {i}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-24 bg-gradient-to-br from-primary/15 via-secondary/10 to-primary/15 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-primary/15 via-secondary/10 to-primary/15 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-primary/5 to-transparent"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <div className="inline-block mb-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 relative">
-              Ready to Transform Your Business?
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-            </h2>
-          </div>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-            Let's build something amazing together. Contact us today to discuss your project and discover
-            how we can help you achieve your business goals.
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+            Join successful businesses who trust Lapeng Synegy to bridge the gap between creativity and technology
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button 
+              size="lg" 
               onClick={handleGetStarted}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
             >
-              Start Your Project
-              <ArrowRight className="ml-2 h-5 w-5" />
+              Start Your Project Today
+              <ArrowRight className="ml-3 h-6 w-6" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => window.open('mailto:info@lapengsynegy.com', '_blank')}
-              className="px-8 py-4 text-lg border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            
+            <Button 
+              size="lg" 
+              variant="outline" 
+              onClick={handleViewPricing}
+              className="px-12 py-6 text-xl border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
             >
-              Schedule a Consultation
+              View Our Plans
             </Button>
           </div>
         </div>
