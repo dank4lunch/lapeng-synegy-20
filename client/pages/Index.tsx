@@ -6,6 +6,21 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function Index() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleGetStarted = () => {
+    scrollToSection('contact');
+  };
+
+  const handleViewWork = () => {
+    scrollToSection('services');
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
