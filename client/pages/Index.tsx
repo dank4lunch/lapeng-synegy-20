@@ -26,21 +26,22 @@ export default function Index() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10"></div>
+      <section className="relative py-24 lg:py-40 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/10 to-primary/5"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-primary/5 to-transparent"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center max-w-4xl mx-auto">
-            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-4 py-2">
+          <div className="text-center max-w-5xl mx-auto">
+            <Badge className="mb-8 bg-primary/10 text-primary border-primary/20 px-6 py-3 text-lg font-medium">
               Media • Marketing • Technology
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-8 leading-tight">
               Bridge the gap between
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"> creativity </span>
+              <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent"> creativity </span>
               and
-              <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent"> technology</span>
+              <span className="bg-gradient-to-r from-secondary via-primary to-secondary bg-clip-text text-transparent"> technology</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Lapeng Synegy empowers businesses through integrated marketing strategies, 
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+              Lapeng Synegy empowers businesses through integrated marketing strategies,
               engaging media content, and smart tech innovations that deliver measurable results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -66,59 +67,62 @@ export default function Index() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-muted/30">
+      <section id="services" className="py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Core Services
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-20">
+            <div className="inline-block">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 relative">
+                Our Core Services
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              </h2>
+            </div>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-8">
               We blend creative media strategies with smart technology to ensure you stand out and achieve measurable growth.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {/* Media & Marketing */}
-            <Card className="border-2 hover:border-secondary/50 transition-all duration-300 group">
-              <CardHeader>
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
-                  <TrendingUp className="h-6 w-6 text-secondary" />
+            <Card className="border-2 hover:border-secondary/50 transition-all duration-500 group hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
+              <CardHeader className="pb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-xl flex items-center justify-center mb-6 group-hover:from-secondary/30 group-hover:to-secondary/20 transition-all duration-300 group-hover:scale-110">
+                  <TrendingUp className="h-8 w-8 text-secondary" />
                 </div>
-                <CardTitle className="text-2xl text-foreground">Media & Marketing Solutions</CardTitle>
-                <CardDescription className="text-muted-foreground">
+                <CardTitle className="text-3xl text-foreground mb-3">Media & Marketing Solutions</CardTitle>
+                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
                   Strategic marketing that builds brands and drives engagement
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-success mt-0.5" />
-                    <span className="text-muted-foreground">Social Media Management & Marketing</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-success mt-0.5" />
-                    <span className="text-muted-foreground">Brand Development & Positioning</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-success mt-0.5" />
-                    <span className="text-muted-foreground">Creative Content Production</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-success mt-0.5" />
-                    <span className="text-muted-foreground">Marketing Strategy & Campaign Execution</span>
-                  </li>
+                  <li className="flex items-start space-x-4 py-2">
+                <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground text-lg">Social Media Management & Marketing</span>
+              </li>
+                  <li className="flex items-start space-x-4 py-2">
+                <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground text-lg">Brand Development & Positioning</span>
+              </li>
+                  <li className="flex items-start space-x-4 py-2">
+                <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground text-lg">Creative Content Production</span>
+              </li>
+                  <li className="flex items-start space-x-4 py-2">
+                <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground text-lg">Marketing Strategy & Campaign Execution</span>
+              </li>
                 </ul>
               </CardContent>
             </Card>
 
             {/* Technology Solutions */}
-            <Card className="border-2 hover:border-primary/50 transition-all duration-300 group">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Brain className="h-6 w-6 text-primary" />
+            <Card className="border-2 hover:border-primary/50 transition-all duration-500 group hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
+              <CardHeader className="pb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 group-hover:scale-110">
+                  <Brain className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl text-foreground">Technology Solutions</CardTitle>
-                <CardDescription className="text-muted-foreground">
+                <CardTitle className="text-3xl text-foreground mb-3">Technology Solutions</CardTitle>
+                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
                   Innovative tech solutions that drive digital transformation
                 </CardDescription>
               </CardHeader>
