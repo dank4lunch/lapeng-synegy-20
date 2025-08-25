@@ -128,21 +128,21 @@ export default function Index() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-success mt-0.5" />
-                    <span className="text-muted-foreground">Web & Mobile Application Development</span>
+                  <li className="flex items-start space-x-4 py-2">
+                    <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground text-lg">Web & Mobile Application Development</span>
                   </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-success mt-0.5" />
-                    <span className="text-muted-foreground">AI-driven Solutions & Automations</span>
+                  <li className="flex items-start space-x-4 py-2">
+                    <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground text-lg">AI-driven Solutions & Automations</span>
                   </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-success mt-0.5" />
-                    <span className="text-muted-foreground">IT Support & Consulting</span>
+                  <li className="flex items-start space-x-4 py-2">
+                    <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground text-lg">IT Support & Consulting</span>
                   </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-success mt-0.5" />
-                    <span className="text-muted-foreground">Digital Transformation Strategies</span>
+                  <li className="flex items-start space-x-4 py-2">
+                    <CheckCircle className="h-6 w-6 text-success mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground text-lg">Digital Transformation Strategies</span>
                   </li>
                 </ul>
               </CardContent>
@@ -150,27 +150,27 @@ export default function Index() {
           </div>
 
           {/* Value Props */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="h-8 w-8 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div className="text-center group hover:-translate-y-2 transition-all duration-300">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-primary/30 group-hover:to-primary/20 group-hover:scale-110 transition-all duration-300">
+                <Target className="h-10 w-10 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Measurable Results</h3>
-              <p className="text-muted-foreground">Data-driven strategies that deliver clear ROI and business growth</p>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Measurable Results</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">Data-driven strategies that deliver clear ROI and business growth</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="h-8 w-8 text-accent" />
+            <div className="text-center group hover:-translate-y-2 transition-all duration-300">
+              <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-secondary/30 group-hover:to-secondary/20 group-hover:scale-110 transition-all duration-300">
+                <Zap className="h-10 w-10 text-secondary" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Innovation First</h3>
-              <p className="text-muted-foreground">Cutting-edge solutions that keep you ahead of the competition</p>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Innovation First</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">Cutting-edge solutions that keep you ahead of the competition</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-secondary" />
+            <div className="text-center group hover:-translate-y-2 transition-all duration-300">
+              <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-accent/30 group-hover:to-accent/20 group-hover:scale-110 transition-all duration-300">
+                <Shield className="h-10 w-10 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Trusted Partnership</h3>
-              <p className="text-muted-foreground">Long-term relationships built on excellence and integrity</p>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Trusted Partnership</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">Long-term relationships built on excellence and integrity</p>
             </div>
           </div>
         </div>
