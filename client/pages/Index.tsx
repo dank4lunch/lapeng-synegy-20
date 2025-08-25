@@ -44,11 +44,20 @@ export default function Index() {
               engaging media content, and smart tech innovations that deliver measurable results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
+              <Button
+                size="lg"
+                onClick={handleGetStarted}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
                 Get Started Today
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="px-8 py-3">
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={handleViewWork}
+                className="px-8 py-4 text-lg border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
                 View Our Work
               </Button>
             </div>
@@ -279,7 +288,13 @@ export default function Index() {
                   <CheckCircle className="h-4 w-4 text-success" />
                   <span className="text-sm text-muted-foreground">1x weekly progress update</span>
                 </div>
-                <Button className="w-full mt-6" variant="outline">Choose Focus</Button>
+                <Button
+                  className="w-full mt-6 hover:bg-primary hover:text-white transition-all duration-300"
+                  variant="outline"
+                  onClick={() => window.open('mailto:info@lapengsynegy.com?subject=Focus Plan Inquiry', '_blank')}
+                >
+                  Choose Focus
+                </Button>
               </CardContent>
             </Card>
 
@@ -309,7 +324,12 @@ export default function Index() {
                   <CheckCircle className="h-4 w-4 text-success" />
                   <span className="text-sm text-muted-foreground">Priority response (24h)</span>
                 </div>
-                <Button className="w-full mt-6 bg-secondary hover:bg-secondary/90">Choose Momentum</Button>
+                <Button
+                  className="w-full mt-6 bg-secondary hover:bg-secondary/90 transition-all duration-300 shadow-md hover:shadow-lg"
+                  onClick={() => window.open('mailto:info@lapengsynegy.com?subject=Momentum Plan Inquiry', '_blank')}
+                >
+                  Choose Momentum
+                </Button>
               </CardContent>
             </Card>
 
@@ -342,7 +362,12 @@ export default function Index() {
                   <CheckCircle className="h-4 w-4 text-success" />
                   <span className="text-sm text-muted-foreground">End-of-month analytics</span>
                 </div>
-                <Button className="w-full mt-6 bg-primary hover:bg-primary/90">Choose Synegy</Button>
+                <Button
+                  className="w-full mt-6 bg-primary hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg"
+                  onClick={() => window.open('mailto:info@lapengsynegy.com?subject=Synegy Plan Inquiry', '_blank')}
+                >
+                  Choose Synegy
+                </Button>
               </CardContent>
             </Card>
 
@@ -372,7 +397,12 @@ export default function Index() {
                   <CheckCircle className="h-4 w-4 text-success" />
                   <span className="text-sm text-muted-foreground">Bi-weekly strategy check-ins</span>
                 </div>
-                <Button className="w-full mt-6 bg-accent hover:bg-accent/90">Contact Sales</Button>
+                <Button
+                  className="w-full mt-6 bg-accent hover:bg-accent/90 transition-all duration-300 shadow-md hover:shadow-lg"
+                  onClick={() => window.open('mailto:info@lapengsynegy.com?subject=Executive Partner Plan Inquiry', '_blank')}
+                >
+                  Contact Sales
+                </Button>
               </CardContent>
             </Card>
           </div>
@@ -396,11 +426,20 @@ export default function Index() {
             how we can help you achieve your business goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
+            <Button
+              size="lg"
+              onClick={handleGetStarted}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
               Start Your Project
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-3">
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => window.open('mailto:info@lapengsynegy.com', '_blank')}
+              className="px-8 py-4 text-lg border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
               Schedule a Consultation
             </Button>
           </div>
