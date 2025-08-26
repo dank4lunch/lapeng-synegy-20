@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { SearchProvider } from "./contexts/SearchContext";
 import GlobalSearch from "./components/GlobalSearch";
-import Index from "./pages/IndexTest";
+import Index from "./pages/Index";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Pricing from "./pages/Pricing";
