@@ -22,32 +22,19 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme] = useState<Theme>('light');
 
   useEffect(() => {
-    // Check for saved theme in localStorage or system preference
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const initialTheme = savedTheme || systemPreference;
-    
-    setTheme(initialTheme);
-    applyTheme(initialTheme);
+    // Force light mode only - remove dark mode
+    const root = document.documentElement;
+    root.classList.remove('dark');
+    // Clear any saved dark theme from localStorage
+    localStorage.removeItem('theme');
   }, []);
 
-  const applyTheme = (newTheme: Theme) => {
-    const root = document.documentElement;
-    if (newTheme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-  };
-
+  // Disabled toggle function - always stays light
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    applyTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
+    // Dark mode is disabled - do nothing
   };
 
   const value = {
