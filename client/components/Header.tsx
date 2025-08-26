@@ -58,6 +58,16 @@ export default function Header() {
               Services
             </button>
             <button
+              onClick={() => handleNavigation('/portfolio')}
+              className={`transition-colors cursor-pointer ${
+                location.pathname.startsWith('/portfolio')
+                  ? 'text-primary font-semibold'
+                  : 'text-muted-foreground hover:text-primary'
+              }`}
+            >
+              Portfolio
+            </button>
+            <button
               onClick={() => handleNavigation('/about')}
               className={`transition-colors cursor-pointer ${
                 location.pathname === '/about'
@@ -138,6 +148,16 @@ export default function Header() {
                 }`}
               >
                 Services
+              </button>
+              <button
+                onClick={() => handleNavigation('/portfolio')}
+                className={`block px-3 py-2 transition-colors w-full text-left ${
+                  location.pathname.startsWith('/portfolio')
+                    ? 'text-primary font-semibold'
+                    : 'text-muted-foreground hover:text-primary'
+                }`}
+              >
+                Portfolio
               </button>
               <button
                 onClick={() => handleNavigation('/about')}
