@@ -261,34 +261,40 @@ export default function Index() {
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary/15 via-secondary/10 to-primary/15 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-primary/5 to-transparent"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-            Join successful businesses who trust Lapeng Synegy to bridge the gap between creativity and technology
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button 
-              size="lg" 
-              onClick={handleGetStarted}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
-            >
-              Start Your Project Today
-              <ArrowRight className="ml-3 h-6 w-6" />
-            </Button>
-            
-            <Button 
-              size="lg" 
-              variant="outline" 
-              onClick={handleViewPricing}
-              className="px-12 py-6 text-xl border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
-            >
-              View Our Plans
-            </Button>
-          </div>
+        <ParallaxBackground speed={0.2}>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-primary/5 to-transparent"></div>
+        </ParallaxBackground>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <AnimatedSection animation="slideUp">
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+              Join successful businesses who trust Lapeng Synegy to bridge the gap between creativity and technology
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection animation="scaleIn" delay={300}>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button
+                size="lg"
+                onClick={handleGetStarted}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
+              >
+                Start Your Project Today
+                <ArrowRight className="ml-3 h-6 w-6" />
+              </Button>
+
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={handleViewPricing}
+                className="px-12 py-6 text-xl border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2"
+              >
+                View Our Plans
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
