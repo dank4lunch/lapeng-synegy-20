@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import ThemeToggle from "@/components/ThemeToggle";
+import { useSearch } from "@/contexts/SearchContext";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { setIsOpen } = useSearch();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -86,6 +88,15 @@ export default function Header() {
               Contact
             </button>
             <div className="flex items-center space-x-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(true)}
+                className="text-muted-foreground hover:text-primary"
+                aria-label="Search"
+              >
+                <Search className="h-4 w-4" />
+              </Button>
               <ThemeToggle />
               <Button
                 onClick={handleGetStarted}
@@ -149,6 +160,17 @@ export default function Header() {
                 Contact
               </button>
               <div className="px-3 py-2 space-y-3">
+                <Button
+                  variant="ghost"
+                  onClick={() => {
+                    setIsOpen(true);
+                    setIsMenuOpen(false);
+                  }}
+                  className="w-full justify-start"
+                >
+                  <Search className="mr-2 h-4 w-4" />
+                  Search
+                </Button>
                 <div className="flex justify-center">
                   <ThemeToggle size="default" className="w-full" />
                 </div>
