@@ -261,101 +261,45 @@ export default function Index() {
             </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 perspective-1000">
             <AnimatedSection animation="slideUp" delay={0}>
-              <Card className="p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-lg text-muted-foreground mb-6 italic">
-                    "Lapeng Synegy transformed our digital presence completely. Their integrated approach to marketing and technology delivered results beyond our expectations."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-4">
-                      <span className="text-white font-bold">SM</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground">Sarah Mitchell</p>
-                      <p className="text-sm text-muted-foreground">CEO, TechFlow Solutions</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <TestimonialCard3D
+                quote="Lapeng Synegy transformed our digital presence completely. Their integrated approach to marketing and technology delivered results beyond our expectations."
+                name="Sarah Mitchell"
+                title="CEO, TechFlow Solutions"
+                initials="SM"
+                delay={0}
+              />
             </AnimatedSection>
 
             <AnimatedSection animation="slideUp" delay={200}>
-              <Card className="p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-lg text-muted-foreground mb-6 italic">
-                    "Working with Lapeng Synegy has been a game-changer. Their AI solutions streamlined our operations and increased efficiency by 40%."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-4">
-                      <span className="text-white font-bold">JK</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground">James Kim</p>
-                      <p className="text-sm text-muted-foreground">Operations Director, InnovateCorp</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <TestimonialCard3D
+                quote="Working with Lapeng Synegy has been a game-changer. Their AI solutions streamlined our operations and increased efficiency by 40%."
+                name="James Kim"
+                title="Operations Director, InnovateCorp"
+                initials="JK"
+                delay={200}
+              />
             </AnimatedSection>
 
             <AnimatedSection animation="slideUp" delay={400}>
-              <Card className="p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-lg text-muted-foreground mb-6 italic">
-                    "The team's expertise in brand development helped us establish a strong market presence. Our brand recognition increased by 200%."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-4">
-                      <span className="text-white font-bold">MR</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground">Maria Rodriguez</p>
-                      <p className="text-sm text-muted-foreground">Marketing Manager, StyleHub Boutique</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <TestimonialCard3D
+                quote="The team's expertise in brand development helped us establish a strong market presence. Our brand recognition increased by 200%."
+                name="Maria Rodriguez"
+                title="Marketing Manager, StyleHub Boutique"
+                initials="MR"
+                delay={400}
+              />
             </AnimatedSection>
 
             <AnimatedSection animation="slideUp" delay={600}>
-              <Card className="p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-lg text-muted-foreground mb-6 italic">
-                    "Outstanding virtual assistant services! They managed our social media campaigns flawlessly and increased our engagement by 300%."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-4">
-                      <span className="text-white font-bold">DT</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground">David Thompson</p>
-                      <p className="text-sm text-muted-foreground">Founder, GrowthMind Consulting</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <TestimonialCard3D
+                quote="Outstanding virtual assistant services! They managed our social media campaigns flawlessly and increased our engagement by 300%."
+                name="David Thompson"
+                title="Founder, GrowthMind Consulting"
+                initials="DT"
+                delay={600}
+              />
             </AnimatedSection>
           </div>
         </div>
