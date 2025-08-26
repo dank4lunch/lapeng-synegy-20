@@ -67,6 +67,34 @@ const searchData: SearchResult[] = [
     type: 'page'
   },
   {
+    id: '14',
+    title: 'Blog',
+    description: 'Read our latest insights on marketing, technology, and business growth',
+    url: '/blog',
+    type: 'page'
+  },
+  {
+    id: '15',
+    title: 'AI in Small Business Marketing',
+    description: 'How artificial intelligence is revolutionizing marketing for small businesses',
+    url: '/blog/1',
+    type: 'content'
+  },
+  {
+    id: '16',
+    title: 'Building Strong Brand Identity',
+    description: 'Essential elements for creating a memorable brand in the digital age',
+    url: '/blog/2',
+    type: 'content'
+  },
+  {
+    id: '17',
+    title: 'Social Media Trends 2024',
+    description: 'Emerging social media trends that will shape business connections',
+    url: '/blog/3',
+    type: 'content'
+  },
+  {
     id: '6',
     title: 'Social Media Management',
     description: 'Strategic social media campaigns and community management services',
