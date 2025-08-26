@@ -206,35 +206,43 @@ export default function Index() {
 
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <AnimatedSection animation="slideLeft" delay={200}>
-              <ServiceCard3D
-                title="Media & Marketing"
-                description="Strategic marketing campaigns, brand development, and creative content that builds authentic connections with your audience."
-                features={[
-                  "Social Media Management",
-                  "Brand Development",
-                  "Content Creation",
-                  "Campaign Strategy"
-                ]}
-                icon="M"
-                gradient="bg-gradient-to-br from-secondary/10 to-secondary/5"
-                iconColor="bg-gradient-to-br from-secondary to-secondary/80"
-              />
+              <div className="group">
+                <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-3xl p-8 h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-white font-bold text-2xl">M</span>
+                  </div>
+                  <h3 className="text-3xl font-bold text-foreground mb-4">Media & Marketing</h3>
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    Strategic marketing campaigns, brand development, and creative content that builds authentic connections with your audience.
+                  </p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>✓ Social Media Management</li>
+                    <li>✓ Brand Development</li>
+                    <li>✓ Content Creation</li>
+                    <li>✓ Campaign Strategy</li>
+                  </ul>
+                </div>
+              </div>
             </AnimatedSection>
 
             <AnimatedSection animation="slideRight" delay={400}>
-              <ServiceCard3D
-                title="Technology Solutions"
-                description="Innovative tech solutions, AI automation, and digital transformation strategies that streamline your operations."
-                features={[
-                  "Web & Mobile Development",
-                  "AI Solutions & Automation",
-                  "Digital Transformation",
-                  "IT Support & Consulting"
-                ]}
-                icon="T"
-                gradient="bg-gradient-to-br from-primary/10 to-primary/5"
-                iconColor="bg-gradient-to-br from-primary to-primary/80"
-              />
+              <div className="group">
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8 h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-white font-bold text-2xl">T</span>
+                  </div>
+                  <h3 className="text-3xl font-bold text-foreground mb-4">Technology Solutions</h3>
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    Innovative tech solutions, AI automation, and digital transformation strategies that streamline your operations.
+                  </p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>✓ Web & Mobile Development</li>
+                    <li>✓ AI Solutions & Automation</li>
+                    <li>✓ Digital Transformation</li>
+                    <li>✓ IT Support & Consulting</li>
+                  </ul>
+                </div>
+              </div>
             </AnimatedSection>
           </div>
 
