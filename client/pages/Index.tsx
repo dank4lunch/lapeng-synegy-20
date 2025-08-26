@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
+import AnimatedSection from "@/components/AnimatedSection";
+import ParallaxBackground from "@/components/ParallaxBackground";
 
 export default function Index() {
   const navigate = useNavigate();
@@ -98,41 +100,51 @@ export default function Index() {
       </section>
 
       {/* Stats Section */}
-      <section id="stats" className="py-24 bg-muted/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="stats" className="py-24 bg-muted/20 relative">
+        <ParallaxBackground speed={0.3} className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-secondary/5 rounded-full blur-3xl"></div>
+        </ParallaxBackground>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-primary/5">
-              <CardContent className="pt-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Target className="h-10 w-10 text-primary" />
-                </div>
-                <h3 className="text-4xl font-bold text-foreground mb-3">100%</h3>
-                <p className="text-xl text-muted-foreground">Measurable Results</p>
-                <p className="text-sm text-muted-foreground mt-2">Data-driven strategies that deliver clear ROI</p>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="scaleIn" delay={0}>
+              <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-primary/5">
+                <CardContent className="pt-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Target className="h-10 w-10 text-primary" />
+                  </div>
+                  <h3 className="text-4xl font-bold text-foreground mb-3">100%</h3>
+                  <p className="text-xl text-muted-foreground">Measurable Results</p>
+                  <p className="text-sm text-muted-foreground mt-2">Data-driven strategies that deliver clear ROI</p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
 
-            <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-secondary/5">
-              <CardContent className="pt-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Zap className="h-10 w-10 text-secondary" />
-                </div>
-                <h3 className="text-4xl font-bold text-foreground mb-3">24/7</h3>
-                <p className="text-xl text-muted-foreground">Innovation First</p>
-                <p className="text-sm text-muted-foreground mt-2">Cutting-edge solutions that keep you ahead</p>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="scaleIn" delay={200}>
+              <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-secondary/5">
+                <CardContent className="pt-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Zap className="h-10 w-10 text-secondary" />
+                  </div>
+                  <h3 className="text-4xl font-bold text-foreground mb-3">24/7</h3>
+                  <p className="text-xl text-muted-foreground">Innovation First</p>
+                  <p className="text-sm text-muted-foreground mt-2">Cutting-edge solutions that keep you ahead</p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
 
-            <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-accent/5">
-              <CardContent className="pt-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Users className="h-10 w-10 text-accent" />
-                </div>
-                <h3 className="text-4xl font-bold text-foreground mb-3">50+</h3>
-                <p className="text-xl text-muted-foreground">Trusted Partners</p>
-                <p className="text-sm text-muted-foreground mt-2">Long-term relationships built on excellence</p>
-              </CardContent>
-            </Card>
+            <AnimatedSection animation="scaleIn" delay={400}>
+              <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-accent/5">
+                <CardContent className="pt-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Users className="h-10 w-10 text-accent" />
+                  </div>
+                  <h3 className="text-4xl font-bold text-foreground mb-3">50+</h3>
+                  <p className="text-xl text-muted-foreground">Trusted Partners</p>
+                  <p className="text-sm text-muted-foreground mt-2">Long-term relationships built on excellence</p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -140,51 +152,57 @@ export default function Index() {
       {/* Services Preview */}
       <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              What We Do Best
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We combine creative excellence with technological innovation to deliver solutions that drive real business growth
-            </p>
-          </div>
+          <AnimatedSection animation="slideUp">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+                What We Do Best
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                We combine creative excellence with technological innovation to deliver solutions that drive real business growth
+              </p>
+            </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div className="group">
-              <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-3xl p-8 h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-2xl">M</span>
+            <AnimatedSection animation="slideLeft" delay={200}>
+              <div className="group">
+                <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-3xl p-8 h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-white font-bold text-2xl">M</span>
+                  </div>
+                  <h3 className="text-3xl font-bold text-foreground mb-4">Media & Marketing</h3>
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    Strategic marketing campaigns, brand development, and creative content that builds authentic connections with your audience.
+                  </p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>✓ Social Media Management</li>
+                    <li>✓ Brand Development</li>
+                    <li>✓ Content Creation</li>
+                    <li>✓ Campaign Strategy</li>
+                  </ul>
                 </div>
-                <h3 className="text-3xl font-bold text-foreground mb-4">Media & Marketing</h3>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Strategic marketing campaigns, brand development, and creative content that builds authentic connections with your audience.
-                </p>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>✓ Social Media Management</li>
-                  <li>✓ Brand Development</li>
-                  <li>✓ Content Creation</li>
-                  <li>✓ Campaign Strategy</li>
-                </ul>
               </div>
-            </div>
+            </AnimatedSection>
 
-            <div className="group">
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8 h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-2xl">T</span>
+            <AnimatedSection animation="slideRight" delay={400}>
+              <div className="group">
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8 h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-white font-bold text-2xl">T</span>
+                  </div>
+                  <h3 className="text-3xl font-bold text-foreground mb-4">Technology Solutions</h3>
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    Innovative tech solutions, AI automation, and digital transformation strategies that streamline your operations.
+                  </p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>✓ Web & Mobile Development</li>
+                    <li>✓ AI Solutions & Automation</li>
+                    <li>✓ Digital Transformation</li>
+                    <li>✓ IT Support & Consulting</li>
+                  </ul>
                 </div>
-                <h3 className="text-3xl font-bold text-foreground mb-4">Technology Solutions</h3>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Innovative tech solutions, AI automation, and digital transformation strategies that streamline your operations.
-                </p>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>✓ Web & Mobile Development</li>
-                  <li>✓ AI Solutions & Automation</li>
-                  <li>✓ Digital Transformation</li>
-                  <li>✓ IT Support & Consulting</li>
-                </ul>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
 
           <div className="text-center">
@@ -203,35 +221,39 @@ export default function Index() {
       {/* Testimonials */}
       <section className="py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Client Success Stories
-            </h2>
-          </div>
+          <AnimatedSection animation="slideUp">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+                Client Success Stories
+              </h2>
+            </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[1, 2, 3].map((i) => (
-              <Card key={i} className="p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-lg text-muted-foreground mb-6 italic">
-                    "Lapeng Synegy transformed our digital presence completely. Their integrated approach to marketing and technology delivered results beyond our expectations."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-4">
-                      <span className="text-white font-bold">C{i}</span>
+              <AnimatedSection key={i} animation="slideUp" delay={i * 200}>
+                <Card className="p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-muted/30">
+                  <CardContent className="pt-6">
+                    <div className="flex mb-4">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star key={star} className="h-5 w-5 text-yellow-400 fill-current" />
+                      ))}
                     </div>
-                    <div>
-                      <p className="font-semibold text-foreground">Client {i}</p>
-                      <p className="text-sm text-muted-foreground">CEO, Company {i}</p>
+                    <p className="text-lg text-muted-foreground mb-6 italic">
+                      "Lapeng Synegy transformed our digital presence completely. Their integrated approach to marketing and technology delivered results beyond our expectations."
+                    </p>
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-4">
+                        <span className="text-white font-bold">C{i}</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Client {i}</p>
+                        <p className="text-sm text-muted-foreground">CEO, Company {i}</p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
             ))}
           </div>
         </div>
