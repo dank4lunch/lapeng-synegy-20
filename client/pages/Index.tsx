@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import AnimatedSection from "@/components/AnimatedSection";
 import ParallaxBackground from "@/components/ParallaxBackground";
 import FloatingShapes3D from "@/components/FloatingShapes3D";
+import FloatingParticles3D from "@/components/FloatingParticles3D";
 import ServiceCard3D from "@/components/ServiceCard3D";
 import { ArrowRight, Play, ChevronDown, Target, Users, Zap, Star, BarChart3, Globe, Shield, Lightbulb, TrendingUp, Award, CheckCircle } from "lucide-react";
 
