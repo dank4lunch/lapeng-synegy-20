@@ -78,6 +78,16 @@ export default function Header() {
               Pricing
             </button>
             <button
+              onClick={() => handleNavigation('/blog')}
+              className={`transition-colors cursor-pointer ${
+                location.pathname.startsWith('/blog')
+                  ? 'text-primary font-semibold'
+                  : 'text-muted-foreground hover:text-primary'
+              }`}
+            >
+              Blog
+            </button>
+            <button
               onClick={() => handleNavigation('/contact')}
               className={`transition-colors cursor-pointer ${
                 location.pathname === '/contact'
@@ -148,6 +158,16 @@ export default function Header() {
                 }`}
               >
                 Pricing
+              </button>
+              <button
+                onClick={() => handleNavigation('/blog')}
+                className={`block px-3 py-2 transition-colors w-full text-left ${
+                  location.pathname.startsWith('/blog')
+                    ? 'text-primary font-semibold'
+                    : 'text-muted-foreground hover:text-primary'
+                }`}
+              >
+                Blog
               </button>
               <button
                 onClick={() => handleNavigation('/contact')}
