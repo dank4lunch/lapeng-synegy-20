@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -84,12 +85,15 @@ export default function Header() {
             >
               Contact
             </button>
-            <Button
-              onClick={handleGetStarted}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              Get Started
-            </Button>
+            <div className="flex items-center space-x-2">
+              <ThemeToggle />
+              <Button
+                onClick={handleGetStarted}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                Get Started
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile menu button */}
@@ -144,7 +148,10 @@ export default function Header() {
               >
                 Contact
               </button>
-              <div className="px-3 py-2">
+              <div className="px-3 py-2 space-y-3">
+                <div className="flex justify-center">
+                  <ThemeToggle size="default" className="w-full" />
+                </div>
                 <Button
                   onClick={handleGetStarted}
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300"
