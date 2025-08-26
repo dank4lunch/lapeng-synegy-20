@@ -95,6 +95,27 @@ const searchData: SearchResult[] = [
     type: 'content'
   },
   {
+    id: '18',
+    title: 'Portfolio',
+    description: 'View our success stories and client case studies',
+    url: '/portfolio',
+    type: 'page'
+  },
+  {
+    id: '19',
+    title: 'Digital Transformation Case Study',
+    description: 'How we helped InnovateTech achieve 300% lead growth',
+    url: '/portfolio/1',
+    type: 'content'
+  },
+  {
+    id: '20',
+    title: 'E-commerce Redesign Success',
+    description: 'StyleHub Boutique platform redesign with 40% cart abandonment reduction',
+    url: '/portfolio/2',
+    type: 'content'
+  },
+  {
     id: '6',
     title: 'Social Media Management',
     description: 'Strategic social media campaigns and community management services',
