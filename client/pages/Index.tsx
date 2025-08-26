@@ -128,43 +128,58 @@ export default function Index() {
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-secondary/5 rounded-full blur-3xl"></div>
         </ParallaxBackground>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 perspective-1000">
             <AnimatedSection animation="scaleIn" delay={0}>
-              <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-primary/5">
-                <CardContent className="pt-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Target className="h-10 w-10 text-primary" />
+              <Card className="text-center p-8 hover:shadow-2xl transition-all duration-700 hover:-translate-y-6 hover:rotate-2 hover:scale-105 bg-gradient-to-br from-white to-primary/5 group relative overflow-hidden transform-gpu"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transition: 'all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                }}>
+                <CardContent className="pt-6 relative z-10">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg group-hover:shadow-2xl">
+                    <Target className="h-10 w-10 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <h3 className="text-4xl font-bold text-foreground mb-3">100%</h3>
-                  <p className="text-xl text-muted-foreground">Measurable Results</p>
+                  <h3 className="text-4xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">100%</h3>
+                  <p className="text-xl text-muted-foreground group-hover:text-foreground transition-colors duration-300">Measurable Results</p>
                   <p className="text-sm text-muted-foreground mt-2">Data-driven strategies that deliver clear ROI</p>
                 </CardContent>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Card>
             </AnimatedSection>
 
             <AnimatedSection animation="scaleIn" delay={200}>
-              <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-secondary/5">
-                <CardContent className="pt-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Zap className="h-10 w-10 text-secondary" />
+              <Card className="text-center p-8 hover:shadow-2xl transition-all duration-700 hover:-translate-y-6 hover:-rotate-1 hover:scale-105 bg-gradient-to-br from-white to-secondary/5 group relative overflow-hidden transform-gpu"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transition: 'all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                }}>
+                <CardContent className="pt-6 relative z-10">
+                  <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500 shadow-lg group-hover:shadow-2xl">
+                    <Zap className="h-10 w-10 text-secondary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <h3 className="text-4xl font-bold text-foreground mb-3">24/7</h3>
-                  <p className="text-xl text-muted-foreground">Innovation First</p>
+                  <h3 className="text-4xl font-bold text-foreground mb-3 group-hover:text-secondary transition-colors duration-300">24/7</h3>
+                  <p className="text-xl text-muted-foreground group-hover:text-foreground transition-colors duration-300">Innovation First</p>
                   <p className="text-sm text-muted-foreground mt-2">Cutting-edge solutions that keep you ahead</p>
                 </CardContent>
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Card>
             </AnimatedSection>
 
             <AnimatedSection animation="scaleIn" delay={400}>
-              <Card className="text-center p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gradient-to-br from-white to-accent/5">
-                <CardContent className="pt-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Users className="h-10 w-10 text-accent" />
+              <Card className="text-center p-8 hover:shadow-2xl transition-all duration-700 hover:-translate-y-6 hover:rotate-1 hover:scale-105 bg-gradient-to-br from-white to-accent/5 group relative overflow-hidden transform-gpu"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transition: 'all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                }}>
+                <CardContent className="pt-6 relative z-10">
+                  <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg group-hover:shadow-2xl">
+                    <Users className="h-10 w-10 text-accent group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <h3 className="text-4xl font-bold text-foreground mb-3">50+</h3>
-                  <p className="text-xl text-muted-foreground">Trusted Partners</p>
+                  <h3 className="text-4xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">50+</h3>
+                  <p className="text-xl text-muted-foreground group-hover:text-foreground transition-colors duration-300">Trusted Partners</p>
                   <p className="text-sm text-muted-foreground mt-2">Long-term relationships built on excellence</p>
                 </CardContent>
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Card>
             </AnimatedSection>
           </div>
