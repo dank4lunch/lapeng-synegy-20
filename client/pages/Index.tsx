@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
 import AnimatedSection from "@/components/AnimatedSection";
 import ParallaxBackground from "@/components/ParallaxBackground";
+import FloatingShapes3D from "@/components/FloatingShapes3D";
+import { ArrowRight, Play, ChevronDown, Target, Users, Zap, Star, BarChart3, Globe, Shield, Lightbulb, TrendingUp, Award, CheckCircle } from "lucide-react";
 
 export default function Index() {
   const navigate = useNavigate();
