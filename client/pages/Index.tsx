@@ -47,7 +47,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-primary/10 to-transparent"></div>
 
         {/* 3D Floating Shapes */}
-        <FloatingShapes3D />
+        {/* <FloatingShapes3D /> */}
 
         {/* Enhanced animated background elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-pulse shadow-2xl"></div>
