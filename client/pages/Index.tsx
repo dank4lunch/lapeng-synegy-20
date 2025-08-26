@@ -35,7 +35,8 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <FloatingParticles3D intensity="light" />
       <Header />
 
       {/* Hero Section */}
