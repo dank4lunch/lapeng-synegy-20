@@ -75,24 +75,38 @@ export default function Index() {
               <span className="text-accent font-semibold"> measurable results</span>
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <Button 
-                size="lg" 
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 perspective-1000">
+              <Button
+                size="lg"
                 onClick={handleGetStarted}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-xl shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 hover:scale-110 hover:rotate-1 hover:shadow-primary/25 group relative overflow-hidden"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transition: 'all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                }}
               >
-                Start Your Transformation
-                <ArrowRight className="ml-3 h-6 w-6" />
+                <span className="relative z-10 flex items-center">
+                  Start Your Transformation
+                  <ArrowRight className="ml-3 h-6 w-6 transition-transform duration-500 group-hover:translate-x-2 group-hover:scale-110" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/50 to-secondary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline" 
+
+              <Button
+                size="lg"
+                variant="outline"
                 onClick={handleViewServices}
-                className="px-12 py-6 text-xl border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105"
+                className="px-12 py-6 text-xl border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-4 hover:scale-110 hover:-rotate-1 hover:shadow-primary/25 group relative overflow-hidden"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transition: 'all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                }}
               >
-                <Play className="mr-3 h-6 w-6" />
-                Explore Our Services
+                <span className="relative z-10 flex items-center">
+                  <Play className="mr-3 h-6 w-6 transition-transform duration-500 group-hover:scale-125 group-hover:rotate-12" />
+                  Explore Our Services
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/30 to-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Button>
             </div>
 
